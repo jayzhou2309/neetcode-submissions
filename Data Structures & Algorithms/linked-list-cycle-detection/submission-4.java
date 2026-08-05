@@ -11,6 +11,7 @@
 
 class Solution {
     public boolean hasCycle(ListNode head) {
+        if (head == null) return false;
         ListNode fast = head;
         ListNode slow = head;
 
@@ -18,7 +19,9 @@ class Solution {
             fast = fast.next.next;
             slow = slow.next;
 
-            if(fast == slow) return true;
+            if(slow == fast){
+                return true;
+            }
         }
 
         return false;
